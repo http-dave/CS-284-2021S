@@ -1,0 +1,132 @@
+Given the BST 
+
+			12
+		  /    \
+		 6      20
+ 		/ \    /
+	   1   9  15
+
+Give preorder, inorder and post order traversal of its nodes
+
+Pre: 12, 6, 1, 9, 20, 15  (print, explore left, explore right)
+In: 1, 6, 9, 12, 15, 20   (explore left, print, explore right)
+Post: 1, 9, 6, 15, 20, 12 (explore left, explore right, print)
+
+
+Where would 11 be inserted into the tree?
+
+			12
+		 /      \
+		6       20
+ 	   / \      /
+	  1   9    15
+	       \
+	       11
+
+
+What would the tree look like if we were to remove 12?
+
+   			9              15
+		   / \            /  \
+		  6   20   or    6    20
+ 		 /    /         / \
+	    1    15        1  9
+
+
+
+Given the following pre order traversal of a tree:
+[40, 30, 35, 20, 80, 100]
+
+is this a valid bst?
+
+	40	
+   /
+  30
+   \
+    35
+
+no this is not a valid bst because 20 would be in right sub tree of 30
+
+Given the following pre order traversal of a tree:
+[20, 11, 13, 65, 90]
+
+is this a valid bst?
+	
+yes this is a valid bst
+
+
+Given the following hashtable:
+
+[null,0,81,null,9,null,null,null,null]
+
+assuming our hashfunction = number being inserted % tablesize,
+
+with open addressing and 2^i probing, where would the number 27 go?
+
+i = 0 -> 2^0 = 1
+i = 0+1 -> 2^1 = 2
+i = 1+1 -> 2^2 = 4
+i = 2+1 -> 2^3 = 8
+
+we can insert 27 into the index 8
+
+resulting table;
+[null,0,81,null,9,null,null,null,27]
+
+
+with chaining, where would 45 go?
+
+45 would go into index 0
+
+
+
+
+
+
+Given the following tree:
+	  
+	  	  2
+	 	   \
+			5 
+		   / \ 
+		  3   7
+
+
+with these as your default bst rotation functions
+
+public Node<E> rotateRight() {
+		//this refers to mode who rotate is being called from
+	    Node<E> temp = this.left;
+	    this.left = temp.right;
+	    temp.right = this;
+	    return temp;	    
+	}
+
+	public Node<E> rotateLeft() {
+		//this refers to mode who rotate is being called from
+	    Node<E> temp = this.right;
+	    this.right = temp.left;
+	    temp.left = this;
+	    return temp;	    
+	}
+
+
+what would a right rotate of node 5 look like?
+
+      	  2
+	 	   \
+			3 
+		     \ 
+		      5
+		       \
+		        7
+
+
+what would a left rotate of node 2 look like?
+
+		  5
+	 	 / \
+		2	7
+		 \
+		  3  
+		     
